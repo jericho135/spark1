@@ -31,7 +31,7 @@ object JsonReader extends App {
   implicit val json4sFormats = DefaultFormats
 
  // jsonFile.map{ row => parse(row).extract[WineJson]}.collect().take(10).foreach{ e => println(e.getClass + " " + e)}
-  jsonFile.map{ row => parse(row).extract[WineJson]}.collect().foreach{ a =>
+  jsonFile.map{ row => parse(row).extract[WineJson]}.foreach{ a =>
                                                                                   println(a.id.getOrElse(None) + " " +
                                                                                     a.country.getOrElse(None) + " " +
                                                                                   a.points.getOrElse(None) + " " +
